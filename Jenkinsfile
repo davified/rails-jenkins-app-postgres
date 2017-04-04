@@ -5,6 +5,7 @@ pipeline {
         stage('Build') {
             steps {
                 sh 'export PATH="$HOME/.rbenv/shims:$PATH"'
+                sh 'eval "$(rbenv init -)"'
                 sh 'rbenv global 2.3.0'
                 sh 'rbenv rehash'
                 sh 'ruby -v'
