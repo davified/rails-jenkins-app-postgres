@@ -3,6 +3,7 @@ pipeline {
 
     stages {
         stage('Build') {
+            properties([pipelineTriggers([[$class: 'GitHubPushTrigger'], pollSCM('H/1 * * * *')])])
             steps {
                 sh 'pwd'
                 sh 'ls -la'
