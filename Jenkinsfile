@@ -2,22 +2,6 @@ pipeline {
     agent any
 
     stages {
-        stage('Build') {
-            steps {
-                sh 'ruby -v'
-
-                sh 'export PATH="$HOME/.rbenv/shims:$PATH"'
-                sh 'eval "$(rbenv init -)"'
-                // sh 'rbenv local 2.3.0'
-                // sh 'rbenv rehash'
-                sh 'ruby -v'
-                // sh 'rails -v'
-                sh 'bundle install'
-                sh 'bin/rails db:reset'
-                sh 'bin/rails db:migrate'
-                // echo 'building...'
-            }
-        }
         stage('Test') {
             steps {
                 // sh 'bin/rails test'
