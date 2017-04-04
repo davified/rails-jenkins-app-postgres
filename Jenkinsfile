@@ -4,7 +4,7 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-                sh 'rbenv local 2.3.0'
+                sh 'rbenv global 2.3.0'
                 sh 'ruby -v'
                 sh 'rails -v'
                 sh 'bin/rails db:reset'
