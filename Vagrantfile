@@ -17,8 +17,8 @@ Vagrant.configure("2") do |config|
 
   config.vm.provider "virtualbox" do |vb|
     vb.gui = false
-    vb.memory = "1024"
-    vb.cpus = "2"
+    vb.memory = "2048"
+    vb.cpus = "4"
   end
 
   config.vm.define "jenkins" do |c|
