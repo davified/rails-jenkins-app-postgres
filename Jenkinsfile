@@ -4,8 +4,8 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-                pwd
-                ls -la
+                sh 'pwd'
+                sh 'ls -la'
             }
         }
         stage('Test') {
