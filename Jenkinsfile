@@ -4,11 +4,13 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-                // sh 'export PATH="$HOME/.rbenv/shims:$PATH"'
-                // sh 'eval "$(rbenv init -)"'
-                // sh 'rbenv global 2.3.0'
+                sh 'ruby -v'
+
+                sh 'export PATH="$HOME/.rbenv/shims:$PATH"'
+                sh 'eval "$(rbenv init -)"'
+                // sh 'rbenv local 2.3.0'
                 // sh 'rbenv rehash'
-                // sh 'ruby -v'
+                sh 'ruby -v'
                 // sh 'rails -v'
                 sh 'bundle install'
                 sh 'bin/rails db:reset'
