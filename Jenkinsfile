@@ -4,6 +4,8 @@ pipeline {
     stages {
         stage('Build') {
             steps {
+                sh 'ruby -v'
+                sh 'rails -v'
                 sh 'bin/rails db:reset'
                 sh 'bin/rails db:migrate'
                 // echo 'building...'
