@@ -2,6 +2,11 @@ pipeline {
     agent any
 
     stages {
+        stage('Setup') {
+            steps {
+                sh 'gem install bundler'
+            }
+        }
         stage('Build') {
             steps {
                 sh 'bin/rails db:reset'
