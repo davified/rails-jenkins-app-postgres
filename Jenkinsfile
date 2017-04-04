@@ -4,13 +4,13 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-                sh 'rails db:reset'
-                sh 'rails db:migrate'
+                sh 'bin/rails db:reset'
+                sh 'bin/rails db:migrate'
             }
         }
         stage('Test') {
             steps {
-                sh 'rails test'
+                sh 'bin/rails test'
             }
         }
         stage('Deploy') {
